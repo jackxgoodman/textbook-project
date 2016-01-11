@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BookDrop</title>
+        <script src="/~jackgoodman/bookdrop/home.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <button id='home_btn'>Home</button>
+            <button id='cart'>View Cart (0)</button>
+            <button id='account'>Account</button>
+        </div>
+
+        <div class="log_io">
+            <div id="logged_in">
+                <button id="logout_btn">Logout</button>
+            </div>
+            <div id="logged_out">
+                <input id="userfield" type="text" value="Username">
+                <input id="passfield" type="password" value="Password">
+                <button id="login_btn">Login</button>
+                <button id="register_btn">Register</button>
+            </div>
+        </div>
+        
+        <div id="home_view">
+            Search: <input id="query" type="text"><button id="query_btn">Search</button>
+            <table id='home_table'>
+                <tr>
+                    <th>Books:</th>
+                    <th>Course:</th>
+                    <th>Course Title:</th>
+                    <th>Professor:</th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="course_view">
+            <table id='course_table'>
+                <tr>
+                    <th></th>
+                    <th>Book:</th>
+                    <th>Author:</th>
+                    <th>Price:</th>
+                    <th>Notes:</th>
+                </tr>
+            </table>
+            <button id='add_all_to_cart_btn'>Add All to Cart</button>
+        </div>
+        
+        <div id='cart_view'>
+            <table id='cart_table'>
+                <tr>
+                    <th>Book:</th>
+                    <th>Author:</th>
+                    <th>Price:</th>
+                    <th>Course:</th>
+                    <th>Quantity:</th>
+                </tr>
+            </table>
+            <button id='update_btn'>Update</button>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="JTGoodman995@Gmail.com">
+                <input type="hidden" name="lc" value="US">
+                <input type="hidden" name="item_name" value="Textbook Cart">
+                <input type="hidden" name="amount" value="0.00">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="button_subtype" value="services">
+                <input type="hidden" name="no_note" value="0">
+                <input type="hidden" name="tax_rate" value="10.000">
+                <input type="hidden" name="shipping" value="0.00">
+                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynowCC_LG.gif:NonHostedGuest">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+        </div>
+        
+        <div id='account_view'>
+            Username: <input type='text'id='username_edit'>
+            Name: <input type='text' id='name_edit'>
+            Email: <input type='email' id='email_edit'>
+            Address: <input type='text' id='address_edit'>
+            <br>
+            Change Password: <input type='password' id='password_edit' value="">
+            <br>
+            <button id='edit_account_btn'>Update</button>
+        </div>
+        
+        <div id="register_view">
+            Name: <input id='reg_namefield' type="text"> <br>
+            Username: <input id='reg_userfield' type="text">  
+            Password: <input id='reg_passfield' type='password'> <br>
+            Email: <input id='reg_emailfield' type="email"> <br>
+            <button id='reg_btn'>Submit</button>
+        </div>
+
+        <div class="footer">
+            Created by <a href="mailto:jtgoodman995@gmail.com">Jack Goodman</a>, 2015
+        </div>
+    </body>
+</html>
